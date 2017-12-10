@@ -1,6 +1,6 @@
 ## Notifications Android O
 
-![Image-Absolute](assets/android-oreo.png)
+![Image-Absolute](assets/android-oreo.png | width="200")
 
 ---
 ### Android Oreo API 26 released August 2017
@@ -17,7 +17,6 @@
 - Maximum screen aspect ratio |
 - Multi-display support |
 - Notifications |
-</ul>
 
 ---
 
@@ -26,11 +25,11 @@
 +++
 
 ## What is new in Notifications? 
-- #### Notification Channels |
-- #### Notification dots |
-- #### Snoozing |
-- #### Notification timeouts |
-- #### Notification settings |
-- #### Notification dismissal |
-- #### Background colors |
-- #### Messaging style |
+- Snoozing |
+- Notification timeouts |
+- Notification settings |
+- Notification dismissal |
+- Background colors |
+- Notification dots |
+- Messaging style |
+- Notification Channels |
