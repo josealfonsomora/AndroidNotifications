@@ -3,7 +3,8 @@
 ![Image-Absolute](assets/android-oreo.png)
 
 ---
-### Android Oreo API 26 released August 2017
+### Android Oreo API 26 
+#### Released August 2017
 
 - Picture-in-Picture mode 
 - Autofill framework 
@@ -12,8 +13,9 @@
 - Autosizing TextView 
 - Adaptive icons 
 
----
-### Android Oreo API 26 released August 2017
++++
+### Android Oreo API 26
+#### Released August 2017
 
 - Color management 
 - New WebView APIs 
@@ -22,10 +24,10 @@
 - Multi-display support 
 - Notifications 
 
+---
 ### Notifications
 
-+++
-
+---
 ## What is new in Notifications? 
 - Snoozing
 - Notification timeouts
