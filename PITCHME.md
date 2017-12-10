@@ -4,7 +4,7 @@
 
 ---
 ### Android Oreo API 26 
-#### Released August 2017
+##### Released August 2017
 
 - Picture-in-Picture mode 
 - Autofill framework 
@@ -15,7 +15,7 @@
 
 +++
 ### Android Oreo API 26
-#### Released August 2017
+##### Released August 2017
 
 - Color management 
 - New WebView APIs 
@@ -40,12 +40,14 @@
 
 ---
 ### Snoozing
+![Image-Absolute](assets/snoozing.gif)
 
 ---
 ### Notification timeouts
 
 ---
 ### Notification settings
+![Image-Absolute](assets/notification_categories.gif)
 
 ---
 ### Notification dismissal
