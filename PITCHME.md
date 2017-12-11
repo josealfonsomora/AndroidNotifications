@@ -44,6 +44,15 @@
 
 ---
 ### Notification timeouts
+```kotlin
+val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_action_icon)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setTimeoutAfter(5_000)              
+```
+
+@[5](Time in milliseconds)
 
 ---
 ### Notification settings
