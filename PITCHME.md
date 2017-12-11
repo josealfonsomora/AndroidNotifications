@@ -54,6 +54,8 @@ val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
 
 @[5](Time in milliseconds)
 
+![Image-Absolute](assets/timeout.gif)
+
 ---
 ### Notification settings
 ![Image-Absolute](assets/notification_categories.gif)
