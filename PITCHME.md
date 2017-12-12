@@ -48,7 +48,7 @@ val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
                 .setTimeoutAfter(5_000)              
 ```
 
-@[5](Time in milliseconds)
+@[5]
 
 ![Image-Absolute](assets/timeout.gif)
 
