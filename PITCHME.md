@@ -3,8 +3,6 @@
 ![Image-Absolute](assets/android-oreo.png)
 
 ---
-### Android Oreo API 26 
-##### Released August 2017
 
 - Picture-in-Picture mode 
 - Autofill framework 
@@ -14,8 +12,6 @@
 - Adaptive icons 
 
 +++
-### Android Oreo API 26
-##### Released August 2017
 
 - Color management 
 - New WebView APIs 
@@ -62,6 +58,25 @@ val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
 
 ---
 ### Notification dismissal
+
+```kotlin
+class NotificationListener : NotificationListenerService() {
+
+    override fun onNotificationRemoved(sbn: StatusBarNotification?) {
+    }
+
+    override fun onNotificationRemoved(sbn: StatusBarNotification?, rankingMap: RankingMap?) {
+    }
+
+    override fun onNotificationRemoved(sbn: StatusBarNotification?, rankingMap: RankingMap?, reason: Int) {
+    }
+}
+```
+@[9-10]
+
++++
+
+![Image-Absolute](assets/notification_access.png)
 
 ---
 ### Background colors
