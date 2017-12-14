@@ -23,6 +23,12 @@
 ---
 ### Notifications
 
++++
+
+```kotlin
+
+```
+
 ---
 ## What is new in Notifications? 
 - Snoozing
@@ -35,6 +41,19 @@
 
 ---
 ### Snoozing
+
++++
+#### Cal Marting
+
+<img width="300" height="500" src="./assets/cal_good_code.png">
+
+#### GitHub
+https://github.com/cal2195
+
++++
+![Image-Absolute](assets/mute.gif)
+
++++
 ![Image-Absolute](assets/snoozing.gif)
 
 ---
@@ -61,9 +80,6 @@
 ```kotlin
 class NotificationListener : NotificationListenerService() {
 
-    override fun onNotificationRemoved(sbn: StatusBarNotification?) {
-    }
-
     override fun onNotificationRemoved(sbn: StatusBarNotification?, rankingMap: RankingMap?) {
     }
 
@@ -71,7 +87,8 @@ class NotificationListener : NotificationListenerService() {
     }
 }
 ```
-@[9-10]
+@[3-4]
+@[6-7]
 
 ---
 ### Background colors
@@ -91,6 +108,9 @@ class NotificationListener : NotificationListenerService() {
 
 <img align="right" width="300" height="500" src="./assets/notification_foreground_colorized.png">
 <img align="left" width="300" height="500" src="./assets/notification_foreground.png">
+
+Note:
+This is only for Foreground service notification
 
 ---
 ### Historic Messages in Messaging style
@@ -200,8 +220,11 @@ class NotificationListener : NotificationListenerService() {
 +++
 ### Channel Groups
 ```kotlin
+
 mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_1, "Group 1"))
+
 mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_2, "Group 2"))
+
 ```
 
 +++
@@ -266,7 +289,17 @@ mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GRO
 ## Thanks!
 
 
-### Links
+### Code
 
+https://github.com/josealfonsomora/AndroidNotifications
 
-https://developer.android.com/about/versions/oreo/android-8.0.html#notifications
+https://github.com/googlesamples/android-NotificationChannels/tree/master/kotlinApp
+
+### Slides
+
+gitpitch.com/josealfonsomora/AndroidNotifications/master
+
+### CodeLab
+
+https://codelabs.developers.google.com/codelabs/notification-channels-kotlin/
+
