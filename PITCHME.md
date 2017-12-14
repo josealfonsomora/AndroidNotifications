@@ -164,9 +164,12 @@ This is only for Foreground service notification
         mNotificationManager.notify(1234, notification)
     }
     
-     private val mNotificationManager: NotificationManager by lazy {
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-     }         
+    fun newSimpleNotification(context: Context, notificationChannel: String): Notification {
+        return NotificationCompat.Builder(context, notificationChannel)
+                .setContentTitle("Notification Title")
+                .setSmallIcon(android.R.drawable.sym_def_app_icon)
+                .setContentText("Hello World!").build()
+    }        
 ```
 @[1-5]
 @[7-8]
@@ -178,7 +181,13 @@ This is only for Foreground service notification
 @[15]
 @[17]
 @[19-22]
-@[24-26]
+@[24-29]
+@[25]
+
+Notes:
+Vibration pattern is (wait, buzz, wait, buzz, etc..)
+NotificatonBuilder without Channel wont work in API 26+
+Groups is just for visibility
 
 +++
 ### Channel
