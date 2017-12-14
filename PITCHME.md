@@ -6,12 +6,12 @@
 
 ## Me
 
-<img align="left" width="200" height="200" src="./assets/me.jpg" />
+<img align="left" width="150" height="200" src="./assets/me.jpg" />
 
 Lead Android developer at Plynk www.plynk.me
-Twitter: https://twitter.com/josealfonsomora
-LinkedIn: https://www.linkedin.com/in/josealfonsomora/
-GitHub: https://github.com/josealfonsomora
+https://twitter.com/josealfonsomora
+https://www.linkedin.com/in/josealfonsomora/
+https://github.com/josealfonsomora
 
 Learning Kotlin and Android arquitecture
 
