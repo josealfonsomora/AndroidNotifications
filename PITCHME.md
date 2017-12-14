@@ -44,11 +44,11 @@
 ---
 ### Notification timeouts
 ```kotlin
-val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
-    .setSmallIcon(R.drawable.ic_action_icon)
-    .setContentTitle(title)
-    .setContentText(message)
-    .setTimeoutAfter(5_000)              
+    val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
+        .setSmallIcon(R.drawable.ic_action_icon)
+        .setContentTitle(title)
+        .setContentText(message)
+        .setTimeoutAfter(5_000)              
 ```
 
 @[5]
@@ -77,14 +77,14 @@ class NotificationListener : NotificationListenerService() {
 ### Background colors
 
 ```kotlin
-return Notification.Builder(context, notificationChannel)
-    .setContentTitle("Notification title")
-    .setSmallIcon(android.R.drawable.sym_def_app_icon)
-    .setContentText("Notification text")
-    .setColorized(true)
-    .setColor(Color.RED)
-    .setOngoing(true)
-    .build()
+    return Notification.Builder(context, notificationChannel)
+        .setContentTitle("Notification title")
+        .setSmallIcon(android.R.drawable.sym_def_app_icon)
+        .setContentText("Notification text")
+        .setColorized(true)
+        .setColor(Color.RED)
+        .setOngoing(true)
+        .build()
 ```
 
 @[5-6]
@@ -96,17 +96,17 @@ return Notification.Builder(context, notificationChannel)
 ### Historic Messages in Messaging style
 
 ```kotlin
-return Notification.Builder(context, notificationChannel)
-    .setContentTitle("Notification")
-    .setSmallIcon(android.R.drawable.sym_def_app_icon)
-    .setContentText("Notification MessagingStyle")
-    .setStyle(Notification.MessagingStyle("Me")
-            .setConversationTitle("Team lunch")
-            .addMessage("What's up?", 3, "Coworker")
-            .addMessage("Not much", 4, null)
-            .addHistoricMessage(Notification.MessagingStyle.Message("Historic Message - not visible", 5, null))
-            .addMessage("How about lunch?", 6, "Coworker"))
-    .build()
+    return Notification.Builder(context, notificationChannel)
+        .setContentTitle("Notification")
+        .setSmallIcon(android.R.drawable.sym_def_app_icon)
+        .setContentText("Notification MessagingStyle")
+        .setStyle(Notification.MessagingStyle("Me")
+                .setConversationTitle("Team lunch")
+                .addMessage("What's up?", 3, "Coworker")
+                .addMessage("Not much", 4, null)
+                .addHistoricMessage(Notification.MessagingStyle.Message("Historic Message - not visible", 5, null))
+                .addMessage("How about lunch?", 6, "Coworker"))
+        .build()
 ```
 @[7-8,10]
 @[9]
@@ -117,31 +117,75 @@ return Notification.Builder(context, notificationChannel)
 ### Notification Channels
 
 ```kotlin
-private val mNotificationManager: NotificationManager by lazy {
-    getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-}
-    
-var notificationChannel = NotificationChannel(
-        CHANNEL_ID,
-        "Notification Channel Name",
-        NotificationManager.IMPORTANCE_DEFAULT
-)
+    private val mNotificationManager: NotificationManager by lazy {
+        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    }
+        
+    var notificationChannel = NotificationChannel(
+            CHANNEL_ID,
+            "Notification Channel 1",
+            NotificationManager.IMPORTANCE_HIGH
+    )
+    notificationChannel.lightColor = Color.RED
+    notificationChannel.vibrationPattern = longArrayOf(0, 100, 500, 100, 500, 100, 500, 100, 500, 100)
+    notificationChannel.setShowBadge(true)
+    notificationChannel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+    notificationChannel.enableVibration(true);
+    //            notificationChannel.setSound(plynkSound, audioAttributes)
+    notificationChannel.group = GROUP_1
+    notificationChannel.setBypassDnd(true)
 
-notificationChannel.lightColor = Color.RED
-notificationChannel.vibrationPattern = longArrayOf(0, 100, 500, 100, 500, 100, 500, 100, 500, 100)
-notificationChannel.setShowBadge(true)
+    mNotificationManager.createNotificationChannel(notificationChannel)
 
-mNotificationManager.createNotificationChannel(notificationChannel)
+    mNotificationManager.createNotificationChannel(notificationChannel)
 ```
 
 +++
 
 <img align="left" width="300" height="500" src="./assets/notification_channel_name.png">
-<img align="right" width="300" height="500" src="./assets/notification_channel_categories.png">
-<img width="300" height="500" src="./assets/notification_channel_settings.png">
+<img width="300" height="500" src="./assets/notification_channel_categories.png">
+<img align="right" width="300" height="500" src="./assets/notification_channel_settings.png">
+
++++
+
+```java
+    /*
+     * Sets whether notification posted to this channel should vibrate. The vibration pattern can
+     * be set with {@link #setVibrationPattern(long[])}.
+     *
+     * Only modifiable before the channel is submitted to
+     * {@link NotificationManager#notify(String, int, Notification)}.
+     */
+    public void enableVibration(boolean vibration) {
+        this.mVibrationEnabled = vibration;
+    }
+```
+@[5]
+
++++
+
+```kotlin
+    val channel = mNotificationManager.getNotificationChannel(CHANNEL_ID)
+    
+    if (channel.importance != NotificationManager.IMPORTANCE_HIGH)
+            
+    private fun goToNotificationChannelSettings(channel: String) {
+        val i = Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS)
+        i.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+        i.putExtra(Settings.EXTRA_CHANNEL_ID, channel)
+        startActivity(i)
+    }
+```
+
+@[1]
+@[3]
+@[5-10]
 
 ---
 ## Thanks!
 
+
 ### Links
+
+
 https://developer.android.com/about/versions/oreo/android-8.0.html#notifications
