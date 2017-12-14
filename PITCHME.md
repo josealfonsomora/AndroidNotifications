@@ -30,7 +30,6 @@
 - Notification settings
 - Notification dismissal
 - Background colors
-- Notification dots
 - Messaging style
 - Notification Channels
 
@@ -88,16 +87,37 @@ return Notification.Builder(context, notificationChannel)
         .build()
 ```
 
-@[4-5]
+@[5-6]
 
 <img align="right" width="300" height="500" src="./assets/notification_foreground_colorized.png">
 <img align="left" width="300" height="500" src="./assets/notification_foreground.png">
 
 ---
-### Notification dots
-
----
 ### Messaging style
+
+```kotlin
+return Notification.Builder(context, notificationChannel)
+    .setContentTitle("Notification")
+    .setSmallIcon(android.R.drawable.sym_def_app_icon)
+    .setContentText("Notification MessagingStyle")
+    .setStyle(Notification.MessagingStyle("Me")
+            .setConversationTitle("Team lunch")
+            .addMessage("Hi", 2, null) // Pass in null for user.
+            .addMessage("What's up?", 3, "Coworker")
+            .addMessage("Not much", 4, null)
+            .addHistoricMessage(Notification.MessagingStyle.Message("Historic Message - not visible", 5, null)))
+    .build()
+```
+@[7-9]
+@[10]
+
+<img width="300" height="500" src="./assets/notification_messagin_style.png">
 
 ---
 ### Notification Channels
+
+---
+## Thanks!
+
+### Links
+https://developer.android.com/about/versions/oreo/android-8.0.html#notifications
