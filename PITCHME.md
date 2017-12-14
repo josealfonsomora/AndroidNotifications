@@ -361,7 +361,6 @@ Now deprecated and replaced by Importance
 +++
 
 ```kotlin
-
         mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_1, "Group 1"))
 
         mNotificationManager.createNotificationChannel(notificationChannel)
