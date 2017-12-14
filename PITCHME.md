@@ -118,7 +118,7 @@ class NotificationListener : NotificationListenerService() {
 
 +++
 
-```kotlin
+```kotlin   
     private val mNotificationManager: NotificationManager by lazy {
         getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     }
@@ -139,6 +139,12 @@ class NotificationListener : NotificationListenerService() {
     notificationChannel.group = GROUP_1
 
     mNotificationManager.createNotificationChannel(notificationChannel)
+    
+    simple_notification_button.setOnClickListener {
+        val notification = NotificationFactory.newSimpleNotification(this, CHANNEL_ID)
+        mNotificationManager.notify(1234, notification)
+    }
+         
 ```
 @[1-3]
 @[5-9]
@@ -150,6 +156,7 @@ class NotificationListener : NotificationListenerService() {
 @[17]
 @[18]
 @[20]
+@[22-25]
 
 +++
 ### Channel

@@ -1,18 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.josealfonsomora.androidnotifications.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/simple_notification_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Notification" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/timeout_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Timeout Notification" />
+
+    <Button
+        android:id="@+id/messaging_style_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Messaging Style Notification" />
+
+    <Button
+        android:id="@+id/bypass_dnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bypass_dnd" />
+
+    <Button
+        android:id="@+id/notification_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Service" />
+
+    <Button
+        android:id="@+id/notification_service_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Service" />
+
+    <Button
+        android:id="@+id/channel_changed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Channel changed?" />
+
+</LinearLayout>

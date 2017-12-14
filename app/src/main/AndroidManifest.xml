@@ -27,5 +27,6 @@
             </intent-filter>
         </service>
 
+        <service android:name=".services.ForegroundService" />
     </application>
 </manifest>
