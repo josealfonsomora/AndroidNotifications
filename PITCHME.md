@@ -201,7 +201,7 @@ This is only for Foreground service notification
 @[24-29]
 @[25]
 
-Notes:
+Note:
 Vibration pattern is (wait, buzz, wait, buzz, etc..)
 NotificatonBuilder without Channel wont work in API 26+
 Groups is just for visibility
