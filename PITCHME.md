@@ -91,6 +91,7 @@ return Notification.Builder(context, notificationChannel)
 @[4-5]
 
 <img align="right" width="300" height="500" src="./assets/notification_foreground_colorized.png">
+<img align="left" width="300" height="500" src="./assets/notification_foreground.png">
 
 ---
 ### Notification dots
