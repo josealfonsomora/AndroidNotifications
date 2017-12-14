@@ -4,6 +4,23 @@
 
 ---
 
+## Me
+
+<img align="left" width="300" height="300" src="./assets/cal_good_code.png">
+Lead Android developer at Plynk www.plynk.me
+Twitter: https://twitter.com/josealfonsomora
+LinkedIn: https://www.linkedin.com/in/josealfonsomora/
+GitHub: https://github.com/josealfonsomora
+
+Learning Kotlin and Android arquitecture
+
+"Making the world a better place"
+
+Note:
+Contributing less than I would like
+
+---
+
 - Picture-in-Picture mode 
 - Autofill framework 
 - Downloadable fonts 
