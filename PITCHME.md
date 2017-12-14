@@ -6,7 +6,8 @@
 
 ## Me
 
-<img align="left" width="300" height="300" src="./assets/cal_good_code.png">
+<img align="left" width="200" height="200" src="./assets/me.png" />
+
 Lead Android developer at Plynk www.plynk.me
 Twitter: https://twitter.com/josealfonsomora
 LinkedIn: https://www.linkedin.com/in/josealfonsomora/
