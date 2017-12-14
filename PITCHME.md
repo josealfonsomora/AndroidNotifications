@@ -63,7 +63,7 @@ mNotificationManager.notify((111, notification)
 ### Snoozing
 
 +++
-#### Cal Marting
+#### Cal Martin
 
 <img align="left" width="300" height="500" src="./assets/cal_good_code.png">
 
@@ -309,7 +309,7 @@ Now deprecated and replaced by Importance
 ```
 
 +++
-### What if the user change it?
+### What if the user changes it?
 ```kotlin
     val channel = mNotificationManager.getNotificationChannel(CHANNEL_ID)
     
