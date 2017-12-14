@@ -249,14 +249,15 @@ Groups is just for visibility
 ### Channel Groups
 ```kotlin
 
-mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_1, "Group 1"))
+  mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_1, "Group 1"))
 
-mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_2, "Group 2"))
+  mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_2, "Group 2"))
+
 
 ```
 
 +++
-<img align="right" width="300" height="500" src="./assets/channel_groups.png">
+<img width="300" height="500" src="./assets/channel_groups.png">
 
 +++
 ### Notification Visibility
