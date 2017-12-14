@@ -11,6 +11,9 @@
 - Autosizing TextView 
 - Adaptive icons 
 
+Note:
+Preview in March 2017 and released to the public on August 21, 2017
+
 +++
 
 - Color management 
@@ -329,7 +332,8 @@ Now deprecated and replaced by Importance
 ## Recap
 
 +++
-### Notification Manager to create groups and channels (and delete it)
+##### Notification Manager 
+##### To create groups and channels (and delete it)
 
 ```kotlin
     private val mNotificationManager: NotificationManager by lazy {
@@ -358,7 +362,7 @@ Now deprecated and replaced by Importance
 @[10]
 
 +++
-### Notification Channel for settings
+##### Notification Channel for settings
 
 ```kotlin
     var notificationChannel = NotificationChannel(
@@ -379,7 +383,7 @@ Now deprecated and replaced by Importance
 ```
 
 +++
-### Notification Builder for texts and icons
+##### Notification Builder for texts and icons
 ```kotlin
     NotificationCompat.Builder(context, notificationChannel)
         .setContentTitle("Notification Title")
@@ -388,7 +392,7 @@ Now deprecated and replaced by Importance
         .build()
 ```
 ---
-## Thanks!
+### Thanks!
 
 
 ### Code
