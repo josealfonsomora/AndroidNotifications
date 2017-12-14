@@ -6,17 +6,17 @@
 
 ## Me
 
-<img align="left" width="150" height="200" src="./assets/me.jpg" />
-
-Lead Android developer at Plynk www.plynk.me
-https://twitter.com/josealfonsomora
-https://www.linkedin.com/in/josealfonsomora/
-https://github.com/josealfonsomora
-
-Learning Kotlin and Android arquitecture
-
-"Making the world a better place"
-
+<img  width="200" height="150" src="./assets/me.jpg" />
+```kotlin
+    Lead Android developer at Plynk www.plynk.me
+    https://twitter.com/josealfonsomora
+    https://www.linkedin.com/in/josealfonsomora/
+    https://github.com/josealfonsomora
+    
+    Learning Kotlin and Android arquitecture
+    
+    "Making the world a better place"
+```
 Note:
 Contributing less than I would like
 
