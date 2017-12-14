@@ -6,7 +6,7 @@
 
 ## Me
 
-<img align="left" width="200" height="200" src="./assets/me.png" />
+<img align="left" width="200" height="200" src="./assets/me.jpg" />
 
 Lead Android developer at Plynk www.plynk.me
 Twitter: https://twitter.com/josealfonsomora
