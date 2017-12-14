@@ -26,12 +26,12 @@
 ---
 ## What is new in Notifications? 
 - Snoozing
-- Notification timeouts
-- Notification settings
-- Notification dismissal
+- Settings
+- Timeout
+- Dismissal Listener
 - Background colors
-- Messaging style
-- Notification Channels
+- Historic Messages
+- Channels
 
 ---
 ### Snoozing
@@ -45,10 +45,10 @@
 ### Notification timeouts
 ```kotlin
 val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_action_icon)
-                .setContentTitle(title)
-                .setContentText(message)
-                .setTimeoutAfter(5_000)              
+    .setSmallIcon(R.drawable.ic_action_icon)
+    .setContentTitle(title)
+    .setContentText(message)
+    .setTimeoutAfter(5_000)              
 ```
 
 @[5]
@@ -56,7 +56,7 @@ val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
 ![Image-Absolute](assets/timeout.gif)
 
 ---
-### Notification dismissal
+### Notification dismissal listener
 
 ```kotlin
 class NotificationListener : NotificationListenerService() {
@@ -78,13 +78,13 @@ class NotificationListener : NotificationListenerService() {
 
 ```kotlin
 return Notification.Builder(context, notificationChannel)
-        .setContentTitle("Notification title")
-        .setSmallIcon(android.R.drawable.sym_def_app_icon)
-        .setContentText("Notification text")
-        .setColorized(true)
-        .setColor(Color.RED)
-        .setOngoing(true)
-        .build()
+    .setContentTitle("Notification title")
+    .setSmallIcon(android.R.drawable.sym_def_app_icon)
+    .setContentText("Notification text")
+    .setColorized(true)
+    .setColor(Color.RED)
+    .setOngoing(true)
+    .build()
 ```
 
 @[5-6]
@@ -93,7 +93,7 @@ return Notification.Builder(context, notificationChannel)
 <img align="left" width="300" height="500" src="./assets/notification_foreground.png">
 
 ---
-### Messaging style
+### Historic Messages in Messaging style
 
 ```kotlin
 return Notification.Builder(context, notificationChannel)
@@ -102,10 +102,10 @@ return Notification.Builder(context, notificationChannel)
     .setContentText("Notification MessagingStyle")
     .setStyle(Notification.MessagingStyle("Me")
             .setConversationTitle("Team lunch")
-            .addMessage("Hi", 2, null) // Pass in null for user.
             .addMessage("What's up?", 3, "Coworker")
             .addMessage("Not much", 4, null)
-            .addHistoricMessage(Notification.MessagingStyle.Message("Historic Message - not visible", 5, null)))
+            .addHistoricMessage(Notification.MessagingStyle.Message("Historic Message - not visible", 5, null))
+            .addMessage("How about lunch?", 6, "Coworker"))
     .build()
 ```
 @[7-9]
@@ -115,6 +115,28 @@ return Notification.Builder(context, notificationChannel)
 
 ---
 ### Notification Channels
+
+```kotlin
+private val mNotificationManager: NotificationManager by lazy {
+    getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+}
+    
+var notificationChannel = NotificationChannel(
+        CHANNEL_ID,
+        "Notification Channel Name",
+        NotificationManager.IMPORTANCE_DEFAULT
+)
+
+notificationChannel.lightColor = Color.RED
+notificationChannel.vibrationPattern = longArrayOf(0, 100, 500, 100, 500, 100, 500, 100, 500, 100)
+notificationChannel.setShowBadge(true)
+
+mNotificationManager.createNotificationChannel(notificationChannel)
+```
+
+<img align="left" width="300" height="500" src="./assets/notification_channel_name.png">
+<img align="right" width="300" height="500" src="./assets/notification_channel_categories.png">
+<img width="300" height="500" src="./assets/notification_channel_settings.png">
 
 ---
 ## Thanks!
