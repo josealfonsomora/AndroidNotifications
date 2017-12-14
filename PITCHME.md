@@ -350,13 +350,15 @@ Now deprecated and replaced by Importance
 
 +++
 ##### Notification Manager 
-##### To create groups and channels (and delete it)
+###### To create groups and channels (and delete it)
 
 ```kotlin
     private val mNotificationManager: NotificationManager by lazy {
         getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     }
 ```
+
++++
 
 ```kotlin
 
@@ -372,11 +374,11 @@ Now deprecated and replaced by Importance
         
 ```
 
-@[2]
-@[4]
+@[1]
+@[3]
 @[5]
-@[8]
-@[10]
+@[7]
+@[9]
 
 +++
 ##### Notification Channel for settings
