@@ -50,6 +50,8 @@
 #### GitHub
 https://github.com/cal2195
 
+Doing good code! 
+Of course Kotlin!
 +++
 ![Image-Absolute](assets/mute.gif)
 
