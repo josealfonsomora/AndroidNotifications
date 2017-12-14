@@ -244,6 +244,9 @@ Groups is just for visibility
      */
     public static final int IMPORTANCE_HIGH = 4;
 ```
+Note:
+PRIORITY_DEFAULT,PRIORITY_LOW,PRIORITY_MIN,PRIORITY_HIGH,PRIORITY_MAX
+Now deprecated and replaced by Importance
 
 +++
 ### Channel Groups
@@ -296,6 +299,13 @@ Groups is just for visibility
 @[5]
 
 +++
+### Delete a notification channel
+
+```kotlin
+ mNotificationManager.deleteNotificationChannel(CHANNEL_ID)
+```
+
++++
 ### What if the user change it?
 ```kotlin
     val channel = mNotificationManager.getNotificationChannel(CHANNEL_ID)
@@ -314,6 +324,69 @@ Groups is just for visibility
 @[3]
 @[5-10]
 
+---
+
+## Recap
+
++++
+### Notification Manager to create groups and channels (and delete it)
+
+```kotlin
+    private val mNotificationManager: NotificationManager by lazy {
+        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    }
+```
+
+```kotlin
+
+        mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_1, "Group 1"))
+
+        mNotificationManager.createNotificationChannel(notificationChannel)
+
+        val channel = mNotificationManager.getNotificationChannel(CHANNEL_ID)
+
+        mNotificationManager.deleteNotificationChannel(CHANNEL_ID)
+
+        mNotificationManager.notify(1234, notification)
+        
+```
+
+@[2]
+@[4]
+@[5]
+@[8]
+@[10]
+
++++
+### Notification Channel for settings
+
+```kotlin
+    var notificationChannel = NotificationChannel(
+            CHANNEL_ID,
+            "Notification Channel 1",
+            NotificationManager.IMPORTANCE_HIGH
+    )
+    
+    notificationChannel.lightColor = Color.RED
+    notificationChannel.enableLights(true)
+    notificationChannel.vibrationPattern = longArrayOf(0, 100, 500, 100, 500, 100, 500, 100, 500, 100)
+    notificationChannel.enableVibration(true) // Not needed
+    notificationChannel.setShowBadge(true)
+    notificationChannel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+    notificationChannel.setSound(plynkSound, audioAttributes)
+    notificationChannel.setBypassDnd(true)
+    notificationChannel.group = GROUP_1
+```
+
++++
+### Notification Builder for texts and icons
+```kotlin
+    NotificationCompat.Builder(context, notificationChannel)
+        .setContentTitle("Notification Title")
+        .setSmallIcon(android.R.drawable.sym_def_app_icon)
+        .setContentText("Hello World!")
+        .build()
+```
 ---
 ## Thanks!
 
