@@ -45,14 +45,6 @@ Preview in March 2017 and released to the public on August 21, 2017
 ### Notifications
 
 +++
-
-```kotlin
-NotificationCompat.Builder(context, notificationChannel)
-    .setContentTitle("Notification Title")
-    .setSmallIcon(android.R.drawable.sym_def_app_icon)
-    .setContentText("Hello World!").build()
-```
-
 ```kotlin
 var notificationChannel2 = NotificationChannel(
         CHANNEL_ID,
@@ -61,6 +53,13 @@ var notificationChannel2 = NotificationChannel(
 )
 
 mNotificationManager.createNotificationChannel(notificationChannel2)
+```
+
+```kotlin
+NotificationCompat.Builder(context, notificationChannel)
+    .setContentTitle("Notification Title")
+    .setSmallIcon(android.R.drawable.sym_def_app_icon)
+    .setContentText("Hello World!").build()
 ```
 
 ```kotlin
