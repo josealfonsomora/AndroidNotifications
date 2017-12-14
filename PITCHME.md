@@ -140,16 +140,13 @@ This is only for Foreground service notification
 
 +++
 
-```kotlin   
-    private val mNotificationManager: NotificationManager by lazy {
-        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-    }
-        
+```kotlin    
     var notificationChannel = NotificationChannel(
             CHANNEL_ID,
             "Notification Channel 1",
             NotificationManager.IMPORTANCE_HIGH
     )
+    
     notificationChannel.lightColor = Color.RED
     notificationChannel.enableLights(true)
     notificationChannel.vibrationPattern = longArrayOf(0, 100, 500, 100, 500, 100, 500, 100, 500, 100)
@@ -166,19 +163,22 @@ This is only for Foreground service notification
         val notification = NotificationFactory.newSimpleNotification(this, CHANNEL_ID)
         mNotificationManager.notify(1234, notification)
     }
-         
+    
+     private val mNotificationManager: NotificationManager by lazy {
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+     }         
 ```
-@[1-3]
-@[5-9]
-@[10-11]
-@[12-13]
+@[1-5]
+@[7-8]
+@[9-10]
+@[11]
+@[12]
+@[13]
 @[14]
 @[15]
-@[16]
 @[17]
-@[18]
-@[20]
-@[22-25]
+@[19-22]
+@[24-26]
 
 +++
 ### Channel
