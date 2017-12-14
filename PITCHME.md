@@ -108,8 +108,8 @@ return Notification.Builder(context, notificationChannel)
             .addMessage("How about lunch?", 6, "Coworker"))
     .build()
 ```
-@[7-9]
-@[10]
+@[7-8,10]
+@[9]
 
 <img width="300" height="500" src="./assets/notification_messagin_style.png">
 
@@ -133,6 +133,8 @@ notificationChannel.setShowBadge(true)
 
 mNotificationManager.createNotificationChannel(notificationChannel)
 ```
+
++++
 
 <img align="left" width="300" height="500" src="./assets/notification_channel_name.png">
 <img align="right" width="300" height="500" src="./assets/notification_channel_categories.png">
