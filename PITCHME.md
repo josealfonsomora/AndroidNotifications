@@ -26,7 +26,24 @@
 +++
 
 ```kotlin
+NotificationCompat.Builder(context, notificationChannel)
+    .setContentTitle("Notification Title")
+    .setSmallIcon(android.R.drawable.sym_def_app_icon)
+    .setContentText("Hello World!").build()
+```
 
+```kotlin
+var notificationChannel2 = NotificationChannel(
+        CHANNEL_ID,
+        "Notification Channel",
+        NotificationManager.IMPORTANCE_DEFAULT
+)
+
+mNotificationManager.createNotificationChannel(notificationChannel2)
+```
+
+```kotlin
+mNotificationManager.notify((111, notification)
 ```
 
 ---
