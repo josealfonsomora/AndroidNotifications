@@ -45,7 +45,7 @@
 +++
 #### Cal Marting
 
-<img width="300" height="500" src="./assets/cal_good_code.png">
+<img align="left" width="300" height="500" src="./assets/cal_good_code.png">
 
 #### GitHub
 https://github.com/cal2195
