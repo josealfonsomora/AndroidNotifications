@@ -116,6 +116,8 @@ class NotificationListener : NotificationListenerService() {
 ---
 ### Notification Channels
 
++++
+
 ```kotlin
     private val mNotificationManager: NotificationManager by lazy {
         getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -127,27 +129,99 @@ class NotificationListener : NotificationListenerService() {
             NotificationManager.IMPORTANCE_HIGH
     )
     notificationChannel.lightColor = Color.RED
+    notificationChannel.enableLights(true)
     notificationChannel.vibrationPattern = longArrayOf(0, 100, 500, 100, 500, 100, 500, 100, 500, 100)
+    notificationChannel.enableVibration(true) // Not needed
     notificationChannel.setShowBadge(true)
     notificationChannel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
-    notificationChannel.enableVibration(true);
-    //            notificationChannel.setSound(plynkSound, audioAttributes)
-    notificationChannel.group = GROUP_1
+    notificationChannel.setSound(plynkSound, audioAttributes)
     notificationChannel.setBypassDnd(true)
-
-    mNotificationManager.createNotificationChannel(notificationChannel)
+    notificationChannel.group = GROUP_1
 
     mNotificationManager.createNotificationChannel(notificationChannel)
 ```
+@[1-3]
+@[5-9]
+@[10-11]
+@[12-13]
+@[14]
+@[15]
+@[16]
+@[17]
+@[18]
+@[20]
 
 +++
+### Channel
 
 <img align="left" width="300" height="500" src="./assets/notification_channel_name.png">
 <img width="300" height="500" src="./assets/notification_channel_categories.png">
 <img align="right" width="300" height="500" src="./assets/notification_channel_settings.png">
 
 +++
+### Importance
 
+```java
+    /*
+     * A notification with no importance: does not show in the shade.
+     */
+    public static final int IMPORTANCE_NONE = 0;
+
+    /*
+     * Min notification importance: only shows in the shade, below the fold.
+     */
+    public static final int IMPORTANCE_MIN = 1;
+
+    /*
+     * Low notification importance: shows everywhere, but is not intrusive.
+     */
+    public static final int IMPORTANCE_LOW = 2;
+
+    /*
+     * Default notification importance: shows everywhere, makes noise, but does not visually
+     * intrude.
+     */
+    public static final int IMPORTANCE_DEFAULT = 3;
+
+    /*
+     * Higher notification importance: shows everywhere, makes noise and peeks. May use full screen
+     * intents.
+     */
+    public static final int IMPORTANCE_HIGH = 4;
+```
+
++++
+### Channel Groups
+```kotlin
+mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_1, "Group 1"))
+mNotificationManager.createNotificationChannelGroup(NotificationChannelGroup(GROUP_2, "Group 2"))
+```
+
++++
+<img align="right" width="300" height="500" src="./assets/channel_groups.png">
+
++++
+### Notification Visibility
+```java
+    /*
+     * Notification visibility: Show this notification in its entirety on all lockscreens.
+     */
+    public static final int VISIBILITY_PUBLIC = 1;
+
+    /*
+     * Notification visibility: Show this notification on all lockscreens, but conceal sensitive or
+     * private information on secure lockscreens.
+     */
+    public static final int VISIBILITY_PRIVATE = 0;
+
+    /*
+     * Notification visibility: Do not reveal any part of this notification on a secure lockscreen.
+     */
+    public static final int VISIBILITY_SECRET = -1;
+```
+
++++
+### Modifiable?
 ```java
     /*
      * Sets whether notification posted to this channel should vibrate. The vibration pattern can
@@ -163,7 +237,7 @@ class NotificationListener : NotificationListenerService() {
 @[5]
 
 +++
-
+### What if the user change it?
 ```kotlin
     val channel = mNotificationManager.getNotificationChannel(CHANNEL_ID)
     
