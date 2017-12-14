@@ -39,6 +39,10 @@
 ![Image-Absolute](assets/snoozing.gif)
 
 ---
+### Notification settings
+![Image-Absolute](assets/notification_categories.gif)
+
+---
 ### Notification timeouts
 ```kotlin
 val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
@@ -51,10 +55,6 @@ val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
 @[5]
 
 ![Image-Absolute](assets/timeout.gif)
-
----
-### Notification settings
-![Image-Absolute](assets/notification_categories.gif)
 
 ---
 ### Notification dismissal
@@ -74,12 +74,23 @@ class NotificationListener : NotificationListenerService() {
 ```
 @[9-10]
 
-+++
-
-![Image-Absolute](assets/notification_access.png)
-
 ---
 ### Background colors
+
+```kotlin
+return Notification.Builder(context, notificationChannel)
+        .setContentTitle("Notification title")
+        .setSmallIcon(android.R.drawable.sym_def_app_icon)
+        .setContentText("Notification text")
+        .setColorized(true)
+        .setColor(Color.RED)
+        .setOngoing(true)
+        .build()
+```
+
+@[4-5]
+
+<img align="right" width="300" height="500" src="./assets/notification_foreground_colorized.png">
 
 ---
 ### Notification dots
